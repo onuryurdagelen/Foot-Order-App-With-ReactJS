@@ -18,3 +18,7 @@
   background-color: #641e03;
   border-color: #641e03;
 }
+.alert__danger {
+  color: red;
+  font-size: 1rem;
+}

@@ -4,6 +4,9 @@
   margin-bottom: 0.5rem;
   margin-top: 1rem;
 }
+.input__new {
+  margin-left: 5rem;
+}
 
 .input label {
   font-weight: bold;
