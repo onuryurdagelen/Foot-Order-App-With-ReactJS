@@ -47,3 +47,8 @@
 .empty__text {
   margin: 0 auto;
 }
+.text__align {
+  text-align: center;
+  font-size: 1.5rem;
+  color: green;
+}

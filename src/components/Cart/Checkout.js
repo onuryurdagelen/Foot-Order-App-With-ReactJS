@@ -33,7 +33,14 @@ const Checkout = props => {
       postal: enteredPostalIsValid,
       city: enteredCityIsValid,
     });
+    props.onConfirm({
+      name: enteredNameIsValid,
+      street: enteredStreetIsValid,
+      postal: enteredPostalIsValid,
+      city: enteredCityIsValid,
+    });
   };
+
   const onChangeNameHandler = e => {
     setFormValidation(prev => ({ ...prev, name: e.target.value }));
   };
