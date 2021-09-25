@@ -3,7 +3,6 @@ import Input from '../../UI/Input';
 import { useContext, useRef, useState } from 'react';
 import CartContext from '../../../store/cart-context';
 const MealItemForm = props => {
-  const CartCtx = useContext(CartContext);
   const amountInputRef = useRef();
 
   const [amountIsValid, setAmountIsValid] = useState(true);
@@ -40,7 +39,9 @@ const MealItemForm = props => {
       />
       <button>+ Add</button>
       {!amountIsValid && (
-        <p className={classes.alert__danger}>*Please enter a valid amount</p>
+        <p className={classes.alert__danger}>
+          *Please enter value between 1 to 5!
+        </p>
       )}
     </form>
   );

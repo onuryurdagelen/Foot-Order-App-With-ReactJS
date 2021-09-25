@@ -11,11 +11,14 @@ const cartReducer = (state, action) => {
   if (action.type === 'ADD') {
     const updatedTotalAmount =
       state.totalAmount + action.item.price * action.item.amount;
+    console.log('Current Total Amount: ' + updatedTotalAmount);
 
     const existingCartItemIndex = state.items.findIndex(
       item => item.id === action.item.id
     );
+    console.log('Existing Cart Item Index: ' + existingCartItemIndex);
     const existingCartItem = state.items[existingCartItemIndex];
+    console.log('Existing Cart Item: ' + existingCartItem);
     let updatedItems;
 
     if (existingCartItem) {
@@ -25,8 +28,14 @@ const cartReducer = (state, action) => {
       };
       updatedItems = [...state.items];
       updatedItems[existingCartItemIndex] = updatedItem;
+      console.log(
+        'Aynı Itemdan birden fazla olduğunda existing cart item index: ' +
+          existingCartItemIndex
+      );
+      console.log(updatedItems[existingCartItemIndex], updatedItem);
     } else {
       updatedItems = state.items.concat(action.item);
+      console.log(updatedItems);
     }
 
     return {
